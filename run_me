@@ -1,0 +1,699 @@
+&in1
+
+  amix = 0.5
+  forceSDN = .t.
+  SDN_threshold = 5.d-5
+
+  RZ_grid_inside_wall = .t.
+  grid_to_wall        = .t.
+  Z_xpoint_limit(1) = -3.0
+  Z_xpoint_limit(2) = 3.0
+  axis_srch_radius = 2.0
+
+  equil_accuracy = 5.d-6
+
+  ! --- STEP case 
+  tokamak_device = 'STEP'
+  restart = .f.
+  regrid = .f.
+  tstep   = 0
+  nstep   = 0
+!  tstep_n = 1.
+!  nstep_n = 600
+ 
+   nout = 5
+  linear_run = .true.
+
+  ns_deltaphi = 2.
+
+  no_mach1_bc = .true.
+
+  time_evol_scheme= "Gears"
+  write_ps = .f.
+ 
+  fbnd(1)   = 2.
+  fbnd(2:4) = 0.
+  mf = 0
+   
+  xpoint = .t.
+  xcase = 3
+ 
+  freeboundary = .f.
+  resistive_wall = .f.
+
+ F0 = -11.52 !! 4.0 m * 2.88 T
+ R_geo = 3.64391
+ rho_min_neg = 1.d-3
+ T_min_neg = 4.02d-4
+
+  rho_file = "step_oct23_density"
+  Ti_file = "step_oct23_ti"
+  Te_file = "step_oct23_te"
+  ffprime_file = "step_oct23_ffprime"
+
+  central_mass = 2.5
+  central_density  = 2.3
+
+  eta       = 1.d-7
+  eta_ohmic = 1.d-7
+  visco     = 1.d-5
+  visco_par = 1.d-5
+  visco_par_heating = 1.d-5 
+
+  eta_num       = 0.d-16
+  visco_num     = 0.d-16
+  visco_par_num = 0.d-16
+  d_perp_num    = 0.d-16
+ 
+  bc_natural_open = .f.
+  gamma_stangeby = 8.d0
+  !bootstrap = .t.
+
+  tauIC = 0.d0 !1.d-5
+
+  T_min = 1.d-4
+
+  D_par     = 0.d0
+  D_perp(1) = 1.d-5
+  D_perp(2) = 0.85d0
+  D_perp(3) = 0.d0
+  D_perp(4) = 0.01d0
+  D_perp(5) = 0.92d0
+
+  ZK_i_par     = 1.d0
+  ZK_i_perp(1) = 1.d-5
+  ZK_i_perp(2) = 0.85d0
+  ZK_i_perp(3) = 0.d0
+  ZK_i_perp(4) = 0.01d0
+  ZK_i_perp(5) = 0.92d0
+
+  ZK_e_par     = 1.d0
+  ZK_e_perp(1) = 1.d-5
+  ZK_e_perp(2) = 0.85d0
+  ZK_e_perp(3) = 0.d0
+  ZK_e_perp(4) = 0.01d0
+  ZK_e_perp(5) = 0.92d0
+
+  heatsource_i   = 1.d-7
+  heatsource_e   = 1.d-7
+  particlesource = 1.d-6
+
+
+! Grid 
+  n_R = 50
+  n_Z = 300
+  n_flux = 100
+  n_tht = 300
+  n_open = 1
+  n_outer = 3
+  n_inner = 3
+  n_private = 2
+  n_leg = 10
+  n_leg_out = 25
+  n_up_priv = 2
+  n_up_leg = 10
+  n_up_leg_out = 25
+  SIG_closed = 0.2
+  SIG_open = 0.2
+  SIG_outer = 1.0
+  SIG_inner = 1.0
+  SIG_private = 1.0
+  SIG_up_priv = 1.0
+  SIG_theta = 0.1
+  SIG_theta_up = 0.1
+  SIG_leg_0 = 0.5
+  SIG_leg_1 = 0.5
+  SIG_up_leg_0 = 0.5
+  SIG_up_leg_1 = 0.5
+  dPSI_open = 0.005
+  dPSI_outer = 0.01
+  dPSI_inner = 0.01
+  dPSI_private = 0.005
+  dPSI_up_priv = 0.005
+
+! ~~~~~~~~ Patch Blocks ~~~~~~~~
+
+n_wall_blocks = 8
+
+! Lower Private
+n_ext_block ( 1) = 10
+n_block_points_left ( 1) = 2
+R_block_points_left ( 1,1) = 1.91529
+Z_block_points_left ( 1,1) = -6.69695
+R_block_points_left ( 1,2) = 2.15
+Z_block_points_left ( 1,2) = -6.69695
+n_block_points_right( 1) = 2
+R_block_points_right( 1,1) = 2.47344
+Z_block_points_right( 1,1) = -6.37546
+R_block_points_right( 1,2) = 2.49146128
+Z_block_points_right( 1,2) = -6.51912880
+
+n_ext_block ( 2) = 10
+n_block_points_left ( 2) = 2
+R_block_points_left ( 2,1) = 2.47344
+Z_block_points_left ( 2,1) = -6.37546
+R_block_points_left ( 2,2) = 2.49146128
+Z_block_points_left ( 2,2) = -6.51912880
+n_block_points_right( 2) = 2
+R_block_points_right( 2,1) = 3.9654
+Z_block_points_right( 2,1) = -7.79828
+R_block_points_right( 2,2) = 3.8
+Z_block_points_right( 2,2) = -7.79828
+
+! Upper Private
+n_ext_block ( 3) = 10
+n_block_points_left ( 3) = 2
+R_block_points_left ( 3,1) = 1.91533
+Z_block_points_left ( 3,1) = 6.69695
+R_block_points_left ( 3,2) = 2.15
+Z_block_points_left ( 3,2) = 6.69695
+n_block_points_right( 3) = 2
+R_block_points_right( 3,1) = 2.47327
+Z_block_points_right( 3,1) = 6.37553
+R_block_points_right( 3,2) = 2.49146128
+Z_block_points_right( 3,2) = 6.51912880
+
+n_ext_block ( 4) = 10
+n_block_points_left ( 4) = 2
+R_block_points_left ( 4,1) = 2.47327
+Z_block_points_left ( 4,1) = 6.37553
+R_block_points_left ( 4,2) = 2.49146128
+Z_block_points_left ( 4,2) = 6.51912880
+n_block_points_right( 4) = 2
+R_block_points_right( 4,1) = 3.9654
+Z_block_points_right( 4,1) = 7.79828
+R_block_points_right( 4,2) = 3.8
+Z_block_points_right( 4,2) = 7.79828
+
+! Outboard
+n_ext_block ( 5) = 40
+n_block_points_left ( 5) = 2
+R_block_points_left ( 5,1) = +4.04547
+Z_block_points_left ( 5,1) = +7.79832
+R_block_points_left ( 5,2) = +4.8
+Z_block_points_left ( 5,2) = +7.79832
+n_block_points_right( 5) = 2
+R_block_points_right( 5,1) = +2.89189
+Z_block_points_right( 5,1) = +6.07674
+R_block_points_right( 5,2) = +3.19942379
+Z_block_points_right( 5,2) = +6.08774996
+
+n_ext_block ( 6) = 40
+n_block_points_left ( 6) = 2
+R_block_points_left ( 6,1) = +2.89189
+Z_block_points_left ( 6,1) = +6.007674
+R_block_points_left ( 6,2) = +3.19942379
+Z_block_points_left ( 6,2) = +6.08774996
+n_block_points_right( 6) = 2
+R_block_points_right( 6,1) = +5.65168
+Z_block_points_right( 6,1) = 0.000758259
+R_block_points_right( 6,2) = +5.89033747
+Z_block_points_right( 6,2) = +0.03513421
+
+n_ext_block ( 7) = 40
+n_block_points_left ( 7) = 2
+R_block_points_left ( 7,1) = +5.65168
+Z_block_points_left ( 7,1) = 0.000758259
+R_block_points_left ( 7,2) = +5.89033747
+Z_block_points_left ( 7,2) = +0.03513421
+n_block_points_right( 7) = 2
+R_block_points_right( 7,1) = +2.89202
+Z_block_points_right( 7,1) = -6.07629
+R_block_points_right( 7,2) = +3.19942379
+Z_block_points_right( 7,2) = -6.08774996
+
+n_ext_block ( 8) = 40
+n_block_points_left ( 8) = 2
+R_block_points_left ( 8,1) = +2.89202
+Z_block_points_left ( 8,1) = -6.07629
+R_block_points_left ( 8,2) = +3.19942379
+Z_block_points_left ( 8,2) = -6.08774996
+n_block_points_right( 8) = 2
+R_block_points_right( 8,1) = +4.04547
+Z_block_points_right( 8,1) = -7.79832
+R_block_points_right( 8,2) = +4.8
+Z_block_points_right( 8,2) = -7.79832
+
+
+n_limiter = 459
+R_limiter(1) = 2.08092546 , Z_limiter(1) = -6.08774996
+R_limiter(2) = 1.75186694 , Z_limiter(2) = -4.69625473
+R_limiter(3) = 1.74384201 , Z_limiter(3) = -4.66207123
+R_limiter(4) = 1.73618817 , Z_limiter(4) = -4.62795496
+R_limiter(5) = 1.72878742 , Z_limiter(5) = -4.59388638
+R_limiter(6) = 1.72167587 , Z_limiter(6) = -4.55969143
+R_limiter(7) = 1.71490335 , Z_limiter(7) = -4.52547979
+R_limiter(8) = 1.70848787 , Z_limiter(8) = -4.49142647
+R_limiter(9) = 1.70227921 , Z_limiter(9) = -4.45739412
+R_limiter(10) = 1.69636333 , Z_limiter(10) = -4.4232173
+R_limiter(11) = 1.69076359 , Z_limiter(11) = -4.38906097
+R_limiter(12) = 1.68547499 , Z_limiter(12) = -4.35497904
+R_limiter(13) = 1.68044806 , Z_limiter(13) = -4.32100201
+R_limiter(14) = 1.6756382 , Z_limiter(14) = -4.2869668
+R_limiter(15) = 1.67109835 , Z_limiter(15) = -4.25288534
+R_limiter(16) = 1.66682851 , Z_limiter(16) = -4.21882868
+R_limiter(17) = 1.662817 , Z_limiter(17) = -4.18480253
+R_limiter(18) = 1.65905273 , Z_limiter(18) = -4.15083408
+R_limiter(19) = 1.65550411 , Z_limiter(19) = -4.116961
+R_limiter(20) = 1.65212703 , Z_limiter(20) = -4.08306122
+R_limiter(21) = 1.64895928 , Z_limiter(21) = -4.04913187
+R_limiter(22) = 1.64599645 , Z_limiter(22) = -4.01522875
+R_limiter(23) = 1.64322698 , Z_limiter(23) = -3.98135448
+R_limiter(24) = 1.64063883 , Z_limiter(24) = -3.94751048
+R_limiter(25) = 1.63821971 , Z_limiter(25) = -3.91369748
+R_limiter(26) = 1.63595712 , Z_limiter(26) = -3.87991595
+R_limiter(27) = 1.63383842 , Z_limiter(27) = -3.84616637
+R_limiter(28) = 1.63185191 , Z_limiter(28) = -3.8124671
+R_limiter(29) = 1.629969 , Z_limiter(29) = -3.77882385
+R_limiter(30) = 1.62817776 , Z_limiter(30) = -3.74517226
+R_limiter(31) = 1.62648678 , Z_limiter(31) = -3.71152472
+R_limiter(32) = 1.62488806 , Z_limiter(32) = -3.67790127
+R_limiter(33) = 1.62337208 , Z_limiter(33) = -3.64430189
+R_limiter(34) = 1.62192929 , Z_limiter(34) = -3.61072659
+R_limiter(35) = 1.54366601 , Z_limiter(35) = -1.70692468
+R_limiter(36) = 1.5423044 , Z_limiter(36) = -1.67347288
+R_limiter(37) = 1.54096401 , Z_limiter(37) = -1.64001763
+R_limiter(38) = 1.53964543 , Z_limiter(38) = -1.60656095
+R_limiter(39) = 1.53834927 , Z_limiter(39) = -1.57310295
+R_limiter(40) = 1.537076 , Z_limiter(40) = -1.539644
+R_limiter(41) = 1.53582597 , Z_limiter(41) = -1.50618398
+R_limiter(42) = 1.53459954 , Z_limiter(42) = -1.47272348
+R_limiter(43) = 1.53339684 , Z_limiter(43) = -1.43926239
+R_limiter(44) = 1.5322181 , Z_limiter(44) = -1.40580106
+R_limiter(45) = 1.5310632 , Z_limiter(45) = -1.3723402
+R_limiter(46) = 1.52993226 , Z_limiter(46) = -1.33888328
+R_limiter(47) = 1.52881861 , Z_limiter(47) = -1.30546474
+R_limiter(48) = 1.52771568 , Z_limiter(48) = -1.27200675
+R_limiter(49) = 1.52663779 , Z_limiter(49) = -1.23854053
+R_limiter(50) = 1.52558613 , Z_limiter(50) = -1.20507228
+R_limiter(51) = 1.52456129 , Z_limiter(51) = -1.17160249
+R_limiter(52) = 1.52356386 , Z_limiter(52) = -1.13813162
+R_limiter(53) = 1.52259421 , Z_limiter(53) = -1.1046598
+R_limiter(54) = 1.52165258 , Z_limiter(54) = -1.07118726
+R_limiter(55) = 1.52073932 , Z_limiter(55) = -1.03771424
+R_limiter(56) = 1.51985455 , Z_limiter(56) = -1.00424063
+R_limiter(57) = 1.5189985 , Z_limiter(57) = -0.97076666
+R_limiter(58) = 1.51817119 , Z_limiter(58) = -0.9372924
+R_limiter(59) = 1.51737285 , Z_limiter(59) = -0.90381783
+R_limiter(60) = 1.51660359 , Z_limiter(60) = -0.87034309
+R_limiter(61) = 1.5158633 , Z_limiter(61) = -0.83686823
+R_limiter(62) = 1.5151521 , Z_limiter(62) = -0.80339324
+R_limiter(63) = 1.51447022 , Z_limiter(63) = -0.76991814
+R_limiter(64) = 1.51381743 , Z_limiter(64) = -0.73644304
+R_limiter(65) = 1.51319373 , Z_limiter(65) = -0.70296788
+R_limiter(66) = 1.51259935 , Z_limiter(66) = -0.66949272
+R_limiter(67) = 1.51203418 , Z_limiter(67) = -0.63601756
+R_limiter(68) = 1.51149821 , Z_limiter(68) = -0.60254246
+R_limiter(69) = 1.51099133 , Z_limiter(69) = -0.56906742
+R_limiter(70) = 1.51051366 , Z_limiter(70) = -0.53559238
+R_limiter(71) = 1.51006508 , Z_limiter(71) = -0.5021174
+R_limiter(72) = 1.50964558 , Z_limiter(72) = -0.46864253
+R_limiter(73) = 1.50925517 , Z_limiter(73) = -0.4351677
+R_limiter(74) = 1.50889385 , Z_limiter(74) = -0.40169293
+R_limiter(75) = 1.50856161 , Z_limiter(75) = -0.36821824
+R_limiter(76) = 1.50825822 , Z_limiter(76) = -0.33474362
+R_limiter(77) = 1.50798392 , Z_limiter(77) = -0.30126905
+R_limiter(78) = 1.50773859 , Z_limiter(78) = -0.26779455
+R_limiter(79) = 1.50752211 , Z_limiter(79) = -0.23432009
+R_limiter(80) = 1.50733459 , Z_limiter(80) = -0.20084569
+R_limiter(81) = 1.50717592 , Z_limiter(81) = -0.16737133
+R_limiter(82) = 1.5070461 , Z_limiter(82) = -0.13389702
+R_limiter(83) = 1.50694513 , Z_limiter(83) = -0.10042274
+R_limiter(84) = 1.50687313 , Z_limiter(84) = -0.06694848
+R_limiter(85) = 1.50682986 , Z_limiter(85) = -0.03347424
+R_limiter(86) = 1.50681543 , Z_limiter(86) = 0.0
+R_limiter(87) = 1.50682986 , Z_limiter(87) = 0.03347424
+R_limiter(88) = 1.50687313 , Z_limiter(88) = 0.06694848
+R_limiter(89) = 1.50694513 , Z_limiter(89) = 0.10042274
+R_limiter(90) = 1.5070461 , Z_limiter(90) = 0.13389702
+R_limiter(91) = 1.50717592 , Z_limiter(91) = 0.16737133
+R_limiter(92) = 1.50733459 , Z_limiter(92) = 0.20084569
+R_limiter(93) = 1.50752211 , Z_limiter(93) = 0.23432009
+R_limiter(94) = 1.50773859 , Z_limiter(94) = 0.26779455
+R_limiter(95) = 1.50798392 , Z_limiter(95) = 0.30126905
+R_limiter(96) = 1.50825822 , Z_limiter(96) = 0.33474362
+R_limiter(97) = 1.50856161 , Z_limiter(97) = 0.36821824
+R_limiter(98) = 1.50889385 , Z_limiter(98) = 0.40169293
+R_limiter(99) = 1.50925517 , Z_limiter(99) = 0.4351677
+R_limiter(100) = 1.50964558 , Z_limiter(100) = 0.46864253
+R_limiter(101) = 1.51006508 , Z_limiter(101) = 0.5021174
+R_limiter(102) = 1.51051366 , Z_limiter(102) = 0.53559238
+R_limiter(103) = 1.51099133 , Z_limiter(103) = 0.56906742
+R_limiter(104) = 1.51149821 , Z_limiter(104) = 0.60254246
+R_limiter(105) = 1.51203418 , Z_limiter(105) = 0.63601756
+R_limiter(106) = 1.51259935 , Z_limiter(106) = 0.66949272
+R_limiter(107) = 1.51319373 , Z_limiter(107) = 0.70296788
+R_limiter(108) = 1.51381743 , Z_limiter(108) = 0.73644304
+R_limiter(109) = 1.51447022 , Z_limiter(109) = 0.76991814
+R_limiter(110) = 1.5151521 , Z_limiter(110) = 0.80339324
+R_limiter(111) = 1.5158633 , Z_limiter(111) = 0.83686823
+R_limiter(112) = 1.51660359 , Z_limiter(112) = 0.87034309
+R_limiter(113) = 1.51737285 , Z_limiter(113) = 0.90381783
+R_limiter(114) = 1.51817119 , Z_limiter(114) = 0.9372924
+R_limiter(115) = 1.5189985 , Z_limiter(115) = 0.97076666
+R_limiter(116) = 1.51985455 , Z_limiter(116) = 1.00424063
+R_limiter(117) = 1.52073932 , Z_limiter(117) = 1.03771424
+R_limiter(118) = 1.52165258 , Z_limiter(118) = 1.07118726
+R_limiter(119) = 1.52259421 , Z_limiter(119) = 1.1046598
+R_limiter(120) = 1.52356386 , Z_limiter(120) = 1.13813162
+R_limiter(121) = 1.52456129 , Z_limiter(121) = 1.17160249
+R_limiter(122) = 1.52558613 , Z_limiter(122) = 1.20507228
+R_limiter(123) = 1.52663779 , Z_limiter(123) = 1.23854053
+R_limiter(124) = 1.52771568 , Z_limiter(124) = 1.27200675
+R_limiter(125) = 1.52881861 , Z_limiter(125) = 1.30546474
+R_limiter(126) = 1.52993226 , Z_limiter(126) = 1.33888328
+R_limiter(127) = 1.5310632 , Z_limiter(127) = 1.3723402
+R_limiter(128) = 1.5322181 , Z_limiter(128) = 1.40580106
+R_limiter(129) = 1.53339684 , Z_limiter(129) = 1.43926239
+R_limiter(130) = 1.53459954 , Z_limiter(130) = 1.47272348
+R_limiter(131) = 1.53582597 , Z_limiter(131) = 1.50618398
+R_limiter(132) = 1.537076 , Z_limiter(132) = 1.539644
+R_limiter(133) = 1.53834927 , Z_limiter(133) = 1.57310295
+R_limiter(134) = 1.53964543 , Z_limiter(134) = 1.60656095
+R_limiter(135) = 1.54096401 , Z_limiter(135) = 1.64001763
+R_limiter(136) = 1.5423044 , Z_limiter(136) = 1.67347288
+R_limiter(137) = 1.54366601 , Z_limiter(137) = 1.70692468
+R_limiter(138) = 1.62192929 , Z_limiter(138) = 3.61072659
+R_limiter(139) = 1.62337208 , Z_limiter(139) = 3.64430189
+R_limiter(140) = 1.62488806 , Z_limiter(140) = 3.67790127
+R_limiter(141) = 1.62648678 , Z_limiter(141) = 3.71152472
+R_limiter(142) = 1.62817776 , Z_limiter(142) = 3.74517226
+R_limiter(143) = 1.629969 , Z_limiter(143) = 3.77882385
+R_limiter(144) = 1.63185191 , Z_limiter(144) = 3.8124671
+R_limiter(145) = 1.63383842 , Z_limiter(145) = 3.84616637
+R_limiter(146) = 1.63595712 , Z_limiter(146) = 3.87991595
+R_limiter(147) = 1.63821971 , Z_limiter(147) = 3.91369748
+R_limiter(148) = 1.64063883 , Z_limiter(148) = 3.94751048
+R_limiter(149) = 1.64322698 , Z_limiter(149) = 3.98135448
+R_limiter(150) = 1.64599645 , Z_limiter(150) = 4.01522875
+R_limiter(151) = 1.64895928 , Z_limiter(151) = 4.04913187
+R_limiter(152) = 1.65212703 , Z_limiter(152) = 4.08306122
+R_limiter(153) = 1.65550411 , Z_limiter(153) = 4.116961
+R_limiter(154) = 1.65905273 , Z_limiter(154) = 4.15083408
+R_limiter(155) = 1.662817 , Z_limiter(155) = 4.18480253
+R_limiter(156) = 1.66682851 , Z_limiter(156) = 4.21882868
+R_limiter(157) = 1.67109835 , Z_limiter(157) = 4.25288534
+R_limiter(158) = 1.6756382 , Z_limiter(158) = 4.2869668
+R_limiter(159) = 1.68044806 , Z_limiter(159) = 4.32100201
+R_limiter(160) = 1.68547499 , Z_limiter(160) = 4.35497904
+R_limiter(161) = 1.69076359 , Z_limiter(161) = 4.38906097
+R_limiter(162) = 1.69636333 , Z_limiter(162) = 4.4232173
+R_limiter(163) = 1.70227921 , Z_limiter(163) = 4.45739412
+R_limiter(164) = 1.70848787 , Z_limiter(164) = 4.49142647
+R_limiter(165) = 1.71490335 , Z_limiter(165) = 4.52547979
+R_limiter(166) = 1.72167587 , Z_limiter(166) = 4.55969143
+R_limiter(167) = 1.72878742 , Z_limiter(167) = 4.59388638
+R_limiter(168) = 1.73618817 , Z_limiter(168) = 4.62795496
+R_limiter(169) = 1.74384201 , Z_limiter(169) = 4.66207123
+R_limiter(170) = 1.75186694 , Z_limiter(170) = 4.69625473
+R_limiter(171) = 2.07082367 , Z_limiter(171) = 6.08774996
+R_limiter(172) = 1.68 , Z_limiter(172) = 6.7
+R_limiter(173) = 2.15 , Z_limiter(173) = 6.7
+R_limiter(174) = 2.49146128 , Z_limiter(174) = 6.5191288
+R_limiter(175) = 3.8 , Z_limiter(175) = 7.8
+R_limiter(176) = 4.8 , Z_limiter(176) = 7.8
+R_limiter(177) = 3.19942379 , Z_limiter(177) = 6.08774996
+R_limiter(178) = 4.7167058 , Z_limiter(178) = 3.88349295
+R_limiter(179) = 4.74321079 , Z_limiter(179) = 3.84483385
+R_limiter(180) = 4.76974392 , Z_limiter(180) = 3.8055346
+R_limiter(181) = 4.79627419 , Z_limiter(181) = 3.7656064
+R_limiter(182) = 4.82239103 , Z_limiter(182) = 3.72570205
+R_limiter(183) = 4.84890652 , Z_limiter(183) = 3.68471551
+R_limiter(184) = 4.86646891 , Z_limiter(184) = 3.65711641
+R_limiter(185) = 4.87553835 , Z_limiter(185) = 3.6428535
+R_limiter(186) = 4.8887682 , Z_limiter(186) = 3.62168336
+R_limiter(187) = 4.90223503 , Z_limiter(187) = 3.6000762
+R_limiter(188) = 4.91076851 , Z_limiter(188) = 3.58615613
+R_limiter(189) = 4.92892361 , Z_limiter(189) = 3.55641603
+R_limiter(190) = 4.93227863 , Z_limiter(190) = 3.55083799
+R_limiter(191) = 4.95531797 , Z_limiter(191) = 3.51246071
+R_limiter(192) = 4.97323084 , Z_limiter(192) = 3.48216677
+R_limiter(193) = 4.98199987 , Z_limiter(193) = 3.46728277
+R_limiter(194) = 4.9940691 , Z_limiter(194) = 3.44644928
+R_limiter(195) = 5.00877047 , Z_limiter(195) = 3.42090082
+R_limiter(196) = 5.01452494 , Z_limiter(196) = 3.41074705
+R_limiter(197) = 5.03531837 , Z_limiter(197) = 3.37381697
+R_limiter(198) = 5.05306625 , Z_limiter(198) = 3.34185028
+R_limiter(199) = 5.0620203 , Z_limiter(199) = 3.32562447
+R_limiter(200) = 5.07271624 , Z_limiter(200) = 3.30592322
+R_limiter(201) = 5.08880663 , Z_limiter(201) = 3.2759831
+R_limiter(202) = 5.09177732 , Z_limiter(202) = 3.27038002
+R_limiter(203) = 5.10960245 , Z_limiter(203) = 3.23660421
+R_limiter(204) = 5.11540556 , Z_limiter(204) = 3.22557902
+R_limiter(205) = 5.12822914 , Z_limiter(205) = 3.20080829
+R_limiter(206) = 5.14217806 , Z_limiter(206) = 3.17355609
+R_limiter(207) = 5.14646816 , Z_limiter(207) = 3.16505837
+R_limiter(208) = 5.1634531 , Z_limiter(208) = 3.13115096
+R_limiter(209) = 5.16883469 , Z_limiter(209) = 3.12038326
+R_limiter(210) = 5.18115473 , Z_limiter(210) = 3.09532809
+R_limiter(211) = 5.19559288 , Z_limiter(211) = 3.06555676
+R_limiter(212) = 5.19839382 , Z_limiter(212) = 3.05970931
+R_limiter(213) = 5.21459436 , Z_limiter(213) = 3.02567339
+R_limiter(214) = 5.22223759 , Z_limiter(214) = 3.00950694
+R_limiter(215) = 5.23147249 , Z_limiter(215) = 2.9896729
+R_limiter(216) = 5.24891281 , Z_limiter(216) = 2.9516201
+R_limiter(217) = 5.26317596 , Z_limiter(217) = 2.92007565
+R_limiter(218) = 5.27559662 , Z_limiter(218) = 2.892169
+R_limiter(219) = 5.27903366 , Z_limiter(219) = 2.88435078
+R_limiter(220) = 5.29394436 , Z_limiter(220) = 2.85013771
+R_limiter(221) = 5.30223513 , Z_limiter(221) = 2.83095169
+R_limiter(222) = 5.30932713 , Z_limiter(222) = 2.8143065
+R_limiter(223) = 5.32368374 , Z_limiter(223) = 2.78008103
+R_limiter(224) = 5.32888937 , Z_limiter(224) = 2.76764321
+R_limiter(225) = 5.33850002 , Z_limiter(225) = 2.74433351
+R_limiter(226) = 5.35550547 , Z_limiter(226) = 2.70229769
+R_limiter(227) = 5.36660957 , Z_limiter(227) = 2.67445421
+R_limiter(228) = 5.38207722 , Z_limiter(228) = 2.63485074
+R_limiter(229) = 5.3937254 , Z_limiter(229) = 2.6046443
+R_limiter(230) = 5.40861225 , Z_limiter(230) = 2.56517816
+R_limiter(231) = 5.41990471 , Z_limiter(231) = 2.53487349
+R_limiter(232) = 5.43512249 , Z_limiter(232) = 2.4931016
+R_limiter(233) = 5.445189 , Z_limiter(233) = 2.46511698
+R_limiter(234) = 5.45727158 , Z_limiter(234) = 2.43075275
+R_limiter(235) = 5.46162033 , Z_limiter(235) = 2.41838098
+R_limiter(236) = 5.4696002 , Z_limiter(236) = 2.39536572
+R_limiter(237) = 5.48131371 , Z_limiter(237) = 2.36086559
+R_limiter(238) = 5.48811579 , Z_limiter(238) = 2.34070873
+R_limiter(239) = 5.49313641 , Z_limiter(239) = 2.32565522
+R_limiter(240) = 5.50451469 , Z_limiter(240) = 2.29099178
+R_limiter(241) = 5.51459599 , Z_limiter(241) = 2.2597816
+R_limiter(242) = 5.51575041 , Z_limiter(242) = 2.25617743
+R_limiter(243) = 5.52675915 , Z_limiter(243) = 2.22168589
+R_limiter(244) = 5.54089117 , Z_limiter(244) = 2.17631292
+R_limiter(245) = 5.5483017 , Z_limiter(245) = 2.15224409
+R_limiter(246) = 5.55874777 , Z_limiter(246) = 2.11753321
+R_limiter(247) = 5.5673151 , Z_limiter(247) = 2.08870554
+R_limiter(248) = 5.56903982 , Z_limiter(248) = 2.08285451
+R_limiter(249) = 5.57915688 , Z_limiter(249) = 2.04832578
+R_limiter(250) = 5.58896971 , Z_limiter(250) = 2.01397181
+R_limiter(251) = 5.59358549 , Z_limiter(251) = 1.99779403
+R_limiter(252) = 5.59886742 , Z_limiter(252) = 1.97907507
+R_limiter(253) = 5.60849571 , Z_limiter(253) = 1.9442873
+R_limiter(254) = 5.619874 , Z_limiter(254) = 1.90235686
+R_limiter(255) = 5.62712336 , Z_limiter(255) = 1.87542319
+R_limiter(256) = 5.63627291 , Z_limiter(256) = 1.84054053
+R_limiter(257) = 5.64613867 , Z_limiter(257) = 1.80225122
+R_limiter(258) = 5.65391874 , Z_limiter(258) = 1.77187681
+R_limiter(259) = 5.66261339 , Z_limiter(259) = 1.73694837
+R_limiter(260) = 5.67238998 , Z_limiter(260) = 1.69694829
+R_limiter(261) = 5.67933702 , Z_limiter(261) = 1.66834795
+R_limiter(262) = 5.68758965 , Z_limiter(262) = 1.6334039
+R_limiter(263) = 5.69865131 , Z_limiter(263) = 1.58551717
+R_limiter(264) = 5.70340347 , Z_limiter(264) = 1.56476367
+R_limiter(265) = 5.71121168 , Z_limiter(265) = 1.52988505
+R_limiter(266) = 5.71872616 , Z_limiter(266) = 1.49535239
+R_limiter(267) = 5.7249403 , Z_limiter(267) = 1.46647573
+R_limiter(268) = 5.72607517 , Z_limiter(268) = 1.46117067
+R_limiter(269) = 5.73341465 , Z_limiter(269) = 1.42668521
+R_limiter(270) = 5.74061394 , Z_limiter(270) = 1.39168382
+R_limiter(271) = 5.74746704 , Z_limiter(271) = 1.35752714
+R_limiter(272) = 5.75116777 , Z_limiter(272) = 1.33901727
+R_limiter(273) = 5.75431919 , Z_limiter(273) = 1.32313681
+R_limiter(274) = 5.76109266 , Z_limiter(274) = 1.28833413
+R_limiter(275) = 5.76765585 , Z_limiter(275) = 1.25339413
+R_limiter(276) = 5.773911 , Z_limiter(276) = 1.21921563
+R_limiter(277) = 5.77745771 , Z_limiter(277) = 1.19972575
+R_limiter(278) = 5.78014135 , Z_limiter(278) = 1.1848824
+R_limiter(279) = 5.78630781 , Z_limiter(279) = 1.15008795
+R_limiter(280) = 5.79228449 , Z_limiter(280) = 1.11500013
+R_limiter(281) = 5.79798555 , Z_limiter(281) = 1.08036935
+R_limiter(282) = 5.80378532 , Z_limiter(282) = 1.04439151
+R_limiter(283) = 5.80897808 , Z_limiter(283) = 1.01198506
+R_limiter(284) = 5.81438971 , Z_limiter(284) = 0.97679454
+R_limiter(285) = 5.81954575 , Z_limiter(285) = 0.941715
+R_limiter(286) = 5.82444906 , Z_limiter(286) = 0.90703094
+R_limiter(287) = 5.82912588 , Z_limiter(287) = 0.87302345
+R_limiter(288) = 5.83016539 , Z_limiter(288) = 0.8654325
+R_limiter(289) = 5.8338213 , Z_limiter(289) = 0.83853191
+R_limiter(290) = 5.83839846 , Z_limiter(290) = 0.80345404
+R_limiter(291) = 5.84275246 , Z_limiter(291) = 0.76823407
+R_limiter(292) = 5.84685946 , Z_limiter(292) = 0.73318166
+R_limiter(293) = 5.85074043 , Z_limiter(293) = 0.69839197
+R_limiter(294) = 5.85441971 , Z_limiter(294) = 0.66402072
+R_limiter(295) = 5.85661507 , Z_limiter(295) = 0.64301288
+R_limiter(296) = 5.85800219 , Z_limiter(296) = 0.62968415
+R_limiter(297) = 5.86149883 , Z_limiter(297) = 0.59494072
+R_limiter(298) = 5.86481953 , Z_limiter(298) = 0.55973756
+R_limiter(299) = 5.86790609 , Z_limiter(299) = 0.52449632
+R_limiter(300) = 5.87075567 , Z_limiter(300) = 0.48931813
+R_limiter(301) = 5.87337875 , Z_limiter(301) = 0.45422849
+R_limiter(302) = 5.87578726 , Z_limiter(302) = 0.41923159
+R_limiter(303) = 5.87799501 , Z_limiter(303) = 0.38432899
+R_limiter(304) = 5.88001394 , Z_limiter(304) = 0.34953311
+R_limiter(305) = 5.88185692 , Z_limiter(305) = 0.31490096
+R_limiter(306) = 5.88317823 , Z_limiter(306) = 0.28802124
+R_limiter(307) = 5.88355255 , Z_limiter(307) = 0.28040147
+R_limiter(308) = 5.88512659 , Z_limiter(308) = 0.2457372
+R_limiter(309) = 5.88652611 , Z_limiter(309) = 0.21075432
+R_limiter(310) = 5.88772154 , Z_limiter(310) = 0.17566741
+R_limiter(311) = 5.88870239 , Z_limiter(311) = 0.14054315
+R_limiter(312) = 5.88946581 , Z_limiter(312) = 0.10540727
+R_limiter(313) = 5.89001083 , Z_limiter(313) = 0.07026991
+R_limiter(314) = 5.89033747 , Z_limiter(314) = 0.03513421
+R_limiter(315) = 5.89044619 , Z_limiter(315) = 0.0
+R_limiter(316) = 5.89033747 , Z_limiter(316) = -0.03513421
+R_limiter(317) = 5.89001083 , Z_limiter(317) = -0.07026991
+R_limiter(318) = 5.88946581 , Z_limiter(318) = -0.10540727
+R_limiter(319) = 5.88870239 , Z_limiter(319) = -0.14054315
+R_limiter(320) = 5.88772154 , Z_limiter(320) = -0.17566741
+R_limiter(321) = 5.88652611 , Z_limiter(321) = -0.21075432
+R_limiter(322) = 5.88512659 , Z_limiter(322) = -0.2457372
+R_limiter(323) = 5.88355255 , Z_limiter(323) = -0.28040147
+R_limiter(324) = 5.88317823 , Z_limiter(324) = -0.28802124
+R_limiter(325) = 5.88185692 , Z_limiter(325) = -0.31490096
+R_limiter(326) = 5.88001394 , Z_limiter(326) = -0.34953311
+R_limiter(327) = 5.87799501 , Z_limiter(327) = -0.38432899
+R_limiter(328) = 5.87578726 , Z_limiter(328) = -0.41923159
+R_limiter(329) = 5.87337875 , Z_limiter(329) = -0.45422849
+R_limiter(330) = 5.87075567 , Z_limiter(330) = -0.48931813
+R_limiter(331) = 5.86790609 , Z_limiter(331) = -0.52449632
+R_limiter(332) = 5.86481953 , Z_limiter(332) = -0.55973756
+R_limiter(333) = 5.86149883 , Z_limiter(333) = -0.59494072
+R_limiter(334) = 5.85800219 , Z_limiter(334) = -0.62968415
+R_limiter(335) = 5.85661507 , Z_limiter(335) = -0.64301288
+R_limiter(336) = 5.85441971 , Z_limiter(336) = -0.66402072
+R_limiter(337) = 5.85074043 , Z_limiter(337) = -0.69839197
+R_limiter(338) = 5.84685946 , Z_limiter(338) = -0.73318166
+R_limiter(339) = 5.84275246 , Z_limiter(339) = -0.76823407
+R_limiter(340) = 5.83839846 , Z_limiter(340) = -0.80345404
+R_limiter(341) = 5.8338213 , Z_limiter(341) = -0.83853191
+R_limiter(342) = 5.83016539 , Z_limiter(342) = -0.8654325
+R_limiter(343) = 5.82912588 , Z_limiter(343) = -0.87302345
+R_limiter(344) = 5.82444906 , Z_limiter(344) = -0.90703094
+R_limiter(345) = 5.81954575 , Z_limiter(345) = -0.941715
+R_limiter(346) = 5.81438971 , Z_limiter(346) = -0.97679454
+R_limiter(347) = 5.80897808 , Z_limiter(347) = -1.01198506
+R_limiter(348) = 5.80378532 , Z_limiter(348) = -1.04439151
+R_limiter(349) = 5.79798555 , Z_limiter(349) = -1.08036935
+R_limiter(350) = 5.79228449 , Z_limiter(350) = -1.11500013
+R_limiter(351) = 5.78630781 , Z_limiter(351) = -1.15008795
+R_limiter(352) = 5.78014135 , Z_limiter(352) = -1.1848824
+R_limiter(353) = 5.77745771 , Z_limiter(353) = -1.19972575
+R_limiter(354) = 5.773911 , Z_limiter(354) = -1.21921563
+R_limiter(355) = 5.76765585 , Z_limiter(355) = -1.25339413
+R_limiter(356) = 5.76109266 , Z_limiter(356) = -1.28833413
+R_limiter(357) = 5.75431919 , Z_limiter(357) = -1.32313681
+R_limiter(358) = 5.75116777 , Z_limiter(358) = -1.33901727
+R_limiter(359) = 5.74746704 , Z_limiter(359) = -1.35752714
+R_limiter(360) = 5.74061394 , Z_limiter(360) = -1.39168382
+R_limiter(361) = 5.73341465 , Z_limiter(361) = -1.42668521
+R_limiter(362) = 5.72607517 , Z_limiter(362) = -1.46117067
+R_limiter(363) = 5.7249403 , Z_limiter(363) = -1.46647573
+R_limiter(364) = 5.71872616 , Z_limiter(364) = -1.49535239
+R_limiter(365) = 5.71121168 , Z_limiter(365) = -1.52988505
+R_limiter(366) = 5.70340347 , Z_limiter(366) = -1.56476367
+R_limiter(367) = 5.69865131 , Z_limiter(367) = -1.58551717
+R_limiter(368) = 5.68758965 , Z_limiter(368) = -1.6334039
+R_limiter(369) = 5.67933702 , Z_limiter(369) = -1.66834795
+R_limiter(370) = 5.67238998 , Z_limiter(370) = -1.69694829
+R_limiter(371) = 5.66261339 , Z_limiter(371) = -1.73694837
+R_limiter(372) = 5.65391874 , Z_limiter(372) = -1.77187681
+R_limiter(373) = 5.64613867 , Z_limiter(373) = -1.80225122
+R_limiter(374) = 5.63627291 , Z_limiter(374) = -1.84054053
+R_limiter(375) = 5.62712336 , Z_limiter(375) = -1.87542319
+R_limiter(376) = 5.619874 , Z_limiter(376) = -1.90235686
+R_limiter(377) = 5.60849571 , Z_limiter(377) = -1.9442873
+R_limiter(378) = 5.59886742 , Z_limiter(378) = -1.97907507
+R_limiter(379) = 5.59358549 , Z_limiter(379) = -1.99779403
+R_limiter(380) = 5.58896971 , Z_limiter(380) = -2.01397181
+R_limiter(381) = 5.57915688 , Z_limiter(381) = -2.04832578
+R_limiter(382) = 5.56903982 , Z_limiter(382) = -2.08285451
+R_limiter(383) = 5.5673151 , Z_limiter(383) = -2.08870554
+R_limiter(384) = 5.55874777 , Z_limiter(384) = -2.11753321
+R_limiter(385) = 5.5483017 , Z_limiter(385) = -2.15224409
+R_limiter(386) = 5.54089117 , Z_limiter(386) = -2.17631292
+R_limiter(387) = 5.52675915 , Z_limiter(387) = -2.22168589
+R_limiter(388) = 5.51575041 , Z_limiter(388) = -2.25617743
+R_limiter(389) = 5.51459599 , Z_limiter(389) = -2.2597816
+R_limiter(390) = 5.50451469 , Z_limiter(390) = -2.29099178
+R_limiter(391) = 5.49313641 , Z_limiter(391) = -2.32565522
+R_limiter(392) = 5.48811579 , Z_limiter(392) = -2.34070873
+R_limiter(393) = 5.48131371 , Z_limiter(393) = -2.36086559
+R_limiter(394) = 5.4696002 , Z_limiter(394) = -2.39536572
+R_limiter(395) = 5.46162033 , Z_limiter(395) = -2.41838098
+R_limiter(396) = 5.45727158 , Z_limiter(396) = -2.43075275
+R_limiter(397) = 5.445189 , Z_limiter(397) = -2.46511698
+R_limiter(398) = 5.43512249 , Z_limiter(398) = -2.4931016
+R_limiter(399) = 5.41990471 , Z_limiter(399) = -2.53487349
+R_limiter(400) = 5.40861225 , Z_limiter(400) = -2.56517816
+R_limiter(401) = 5.3937254 , Z_limiter(401) = -2.6046443
+R_limiter(402) = 5.38207722 , Z_limiter(402) = -2.63485074
+R_limiter(403) = 5.36660957 , Z_limiter(403) = -2.67445421
+R_limiter(404) = 5.35550547 , Z_limiter(404) = -2.70229769
+R_limiter(405) = 5.33850002 , Z_limiter(405) = -2.74433351
+R_limiter(406) = 5.32888937 , Z_limiter(406) = -2.76764321
+R_limiter(407) = 5.32368374 , Z_limiter(407) = -2.78008103
+R_limiter(408) = 5.30932713 , Z_limiter(408) = -2.8143065
+R_limiter(409) = 5.30223513 , Z_limiter(409) = -2.83095169
+R_limiter(410) = 5.29394436 , Z_limiter(410) = -2.85013771
+R_limiter(411) = 5.27903366 , Z_limiter(411) = -2.88435078
+R_limiter(412) = 5.27559662 , Z_limiter(412) = -2.892169
+R_limiter(413) = 5.26317596 , Z_limiter(413) = -2.92007565
+R_limiter(414) = 5.24891281 , Z_limiter(414) = -2.9516201
+R_limiter(415) = 5.23147249 , Z_limiter(415) = -2.9896729
+R_limiter(416) = 5.22223759 , Z_limiter(416) = -3.00950694
+R_limiter(417) = 5.21459436 , Z_limiter(417) = -3.02567339
+R_limiter(418) = 5.19839382 , Z_limiter(418) = -3.05970931
+R_limiter(419) = 5.19559288 , Z_limiter(419) = -3.06555676
+R_limiter(420) = 5.18115473 , Z_limiter(420) = -3.09532809
+R_limiter(421) = 5.16883469 , Z_limiter(421) = -3.12038326
+R_limiter(422) = 5.1634531 , Z_limiter(422) = -3.13115096
+R_limiter(423) = 5.14646816 , Z_limiter(423) = -3.16505837
+R_limiter(424) = 5.14217806 , Z_limiter(424) = -3.17355609
+R_limiter(425) = 5.12822914 , Z_limiter(425) = -3.20080829
+R_limiter(426) = 5.11540556 , Z_limiter(426) = -3.22557902
+R_limiter(427) = 5.10960245 , Z_limiter(427) = -3.23660421
+R_limiter(428) = 5.09177732 , Z_limiter(428) = -3.27038002
+R_limiter(429) = 5.08880663 , Z_limiter(429) = -3.2759831
+R_limiter(430) = 5.07271624 , Z_limiter(430) = -3.30592322
+R_limiter(431) = 5.0620203 , Z_limiter(431) = -3.32562447
+R_limiter(432) = 5.05306625 , Z_limiter(432) = -3.34185028
+R_limiter(433) = 5.03531837 , Z_limiter(433) = -3.37381697
+R_limiter(434) = 5.01452494 , Z_limiter(434) = -3.41074705
+R_limiter(435) = 5.00877047 , Z_limiter(435) = -3.42090082
+R_limiter(436) = 4.9940691 , Z_limiter(436) = -3.44644928
+R_limiter(437) = 4.98199987 , Z_limiter(437) = -3.46728277
+R_limiter(438) = 4.97323084 , Z_limiter(438) = -3.48216677
+R_limiter(439) = 4.95531797 , Z_limiter(439) = -3.51246071
+R_limiter(440) = 4.93227863 , Z_limiter(440) = -3.55083799
+R_limiter(441) = 4.92892361 , Z_limiter(441) = -3.55641603
+R_limiter(442) = 4.91076851 , Z_limiter(442) = -3.58615613
+R_limiter(443) = 4.90223503 , Z_limiter(443) = -3.6000762
+R_limiter(444) = 4.8887682 , Z_limiter(444) = -3.62168336
+R_limiter(445) = 4.87553835 , Z_limiter(445) = -3.6428535
+R_limiter(446) = 4.86646891 , Z_limiter(446) = -3.65711641
+R_limiter(447) = 4.84890652 , Z_limiter(447) = -3.68471551
+R_limiter(448) = 4.82239103 , Z_limiter(448) = -3.72570205
+R_limiter(449) = 4.79627419 , Z_limiter(449) = -3.7656064
+R_limiter(450) = 4.76974392 , Z_limiter(450) = -3.8055346
+R_limiter(451) = 4.74321079 , Z_limiter(451) = -3.84483385
+R_limiter(452) = 4.7167058 , Z_limiter(452) = -3.88349295
+R_limiter(453) = 3.19942379 , Z_limiter(453) = -6.08774996
+R_limiter(454) = 4.8 , Z_limiter(454) = -7.8
+R_limiter(455) = 3.8 , Z_limiter(455) = -7.8
+R_limiter(456) = 2.49146128 , Z_limiter(456) = -6.5191288
+R_limiter(457) = 2.15 , Z_limiter(457) = -6.7
+R_limiter(458) = 1.68 , Z_limiter(458) = -6.7
+R_limiter(459) = 2.08092546 , Z_limiter(459) = -6.08774996
+
+&end
