@@ -100,35 +100,11 @@
 
 
 ! Grid 
-  n_R = 50
-  n_Z = 300
-  n_tht = 300
-  n_open = 1
-  n_outer = 3
-  n_inner = 3
-  n_private = 2
-  n_leg = 10
-  n_leg_out = 25
-  n_up_priv = 2
-  n_up_leg = 10
-  n_up_leg_out = 25
-  SIG_closed = 0.2
-  SIG_open = 0.2
-  SIG_outer = 1.0
-  SIG_inner = 1.0
-  SIG_private = 1.0
-  SIG_up_priv = 1.0
-  SIG_theta = 0.1
-  SIG_theta_up = 0.1
-  SIG_leg_0 = 0.5
-  SIG_leg_1 = 0.5
-  SIG_up_leg_0 = 0.5
-  SIG_up_leg_1 = 0.5
-  dPSI_open = 0.005
-  dPSI_outer = 0.01
-  dPSI_inner = 0.01
-  dPSI_private = 0.005
-  dPSI_up_priv = 0.005
+n_R      = 0
+n_Z      = 0
+n_radial = 80
+n_pol    = 120
+n_flux   = 0
 
 ! ~~~~~~~~ Patch Blocks ~~~~~~~~
 
