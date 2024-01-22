@@ -102,7 +102,6 @@
 ! Grid 
   n_R = 50
   n_Z = 300
-  n_flux = 100
   n_tht = 300
   n_open = 1
   n_outer = 3
@@ -133,7 +132,7 @@
 
 ! ~~~~~~~~ Patch Blocks ~~~~~~~~
 
-n_wall_blocks = 8
+n_wall_blocks = 0
 
 ! Lower Private
 n_ext_block ( 1) = 10
