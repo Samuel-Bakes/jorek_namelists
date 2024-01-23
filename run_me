@@ -5,7 +5,7 @@
   SDN_threshold = 5.d-5
 
   RZ_grid_inside_wall = .t.
-  grid_to_wall        = .t.
+
   Z_xpoint_limit(1) = -3.0
   Z_xpoint_limit(2) = 3.0
   axis_srch_radius = 2.0
@@ -100,11 +100,9 @@
 
 
 ! Grid 
-n_R      = 0
-n_Z      = 0
-n_radial = 80
-n_pol    = 120
-n_flux   = 0
+n_R      = 250
+n_Z      = 250
+
 
 ! ~~~~~~~~ Patch Blocks ~~~~~~~~
 
