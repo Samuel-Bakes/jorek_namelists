@@ -48,7 +48,7 @@ R_limiter(5) = 8.920000e-01,Z_limiter(5) = 1.303000e+00
 R_limiter(6) = 8.690000e-01,Z_limiter(6) = 1.331000e+00
 R_limiter(7) = 8.390000e-01,Z_limiter(7) = 1.382000e+00
 R_limiter(8) = 8.220000e-01,Z_limiter(8) = 1.445000e+00
-R_limiter(9) = 8.190000e-01,Z_limiter(9) = 1.481000e+00
+R_limiter(9) = 8.190000e-01,Z_limiter(9) = 1.473000e+00
 R_limiter(10) = 5.070000e-01,Z_limiter(10) = 1.473000e+00
 R_limiter(11) = 4.780000e-01,Z_limiter(11) = 1.445000e+00
 R_limiter(12) = 3.330000e-01,Z_limiter(12) = 1.303000e+00
@@ -65,7 +65,7 @@ R_limiter(22) = 3.340000e-01,Z_limiter(22) = -1.100000e+00
 R_limiter(23) = 3.330000e-01,Z_limiter(23) = -1.100000e+00
 R_limiter(24) = 3.330000e-01,Z_limiter(24) = -1.303000e+00
 R_limiter(25) = 4.780000e-01,Z_limiter(25) = -1.445000e+00
-R_limiter(26) = 5.070000e-01,Z_limiter(26) = -1.473000e+00
+R_limiter(26) = 5.070000e-01,Z_limiter(26) = -1.481000e+00
 R_limiter(27) = 8.190000e-01,Z_limiter(27) = -1.481000e+00
 R_limiter(28) = 8.220000e-01,Z_limiter(28) = -1.445000e+00
 R_limiter(29) = 8.390000e-01,Z_limiter(29) = -1.382000e+00
@@ -221,8 +221,8 @@ R_limiter(36) = 1.555000e+00,Z_limiter(36) = 4.050000e-01
  
  !!! IMPORTANT NOTE!!! : The topological patches should be at least width of 2
  !!! IMPORTANT NOTE!!! : ie. do not use, for example, n_inner = 1
- n_R          =  100 ! 100 !120
- n_Z          =  180 ! 180 !210
+ n_R          =  100
+ n_Z          =  180
  n_flux = 0
 
  !===============================
