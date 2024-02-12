@@ -39,73 +39,43 @@
 
  tokamak_device = 'MAST-U'
  
- n_limiter = 66
- R_limiter(   1) = +1.555104300e+00, Z_limiter(   1) = +0.405000000e+00
- R_limiter(   2) = +1.555104300e+00, Z_limiter(   2) = +0.822500230e+00
- R_limiter(   3) = +1.321370000e+00, Z_limiter(   3) = +0.820000000e+00
- R_limiter(   4) = +1.190430000e+00, Z_limiter(   4) = +1.007000000e+00
- R_limiter(   5) = +0.892960000e+00, Z_limiter(   5) = +1.303960000e+00
- R_limiter(   6) = +0.869380000e+00, Z_limiter(   6) = +1.331210000e+00
- R_limiter(   7) = +0.839810000e+00, Z_limiter(   7) = +1.382580000e+00
- R_limiter(   8) = +0.822290000e+00, Z_limiter(   8) = +1.445100000e+00
- R_limiter(   9) = +0.819740000e+00, Z_limiter(   9) = +1.481240000e+00
- R_limiter(  10) = +0.819740000e+00, Z_limiter(  10) = +1.493600000e+00
- R_limiter(  11) = +0.827340000e+00, Z_limiter(  11) = +1.531850000e+00
- R_limiter(  12) = +0.854800000e+00, Z_limiter(  12) = +1.569640000e+00
- R_limiter(  13) = +0.890170000e+00, Z_limiter(  13) = +1.589130000e+00
- R_limiter(  14) = +0.919740000e+00, Z_limiter(  14) = +1.593600000e+00
- R_limiter(  15) = +0.940660000e+00, Z_limiter(  15) = +1.593580000e+00
- R_limiter(  16) = +1.555000000e+00, Z_limiter(  16) = +1.567000000e+00
- R_limiter(  17) = +1.730071000e+00, Z_limiter(  17) = +1.680000000e+00
- R_limiter(  18) = +1.350000000e+00, Z_limiter(  18) = +2.060000000e+00
- R_limiter(  19) = +1.090000000e+00, Z_limiter(  19) = +2.060000000e+00
- R_limiter(  20) = +1.090000000e+00, Z_limiter(  20) = +2.060000000e+00
- R_limiter(  21) = +0.905756000e+00, Z_limiter(  21) = +1.878584000e+00
- R_limiter(  22) = +0.907170000e+00, Z_limiter(  22) = +1.877170000e+00
- R_limiter(  23) = +0.539480000e+00, Z_limiter(  23) = +1.509480000e+00
- R_limiter(  24) = +0.535940000e+00, Z_limiter(  24) = +1.501700000e+00
- R_limiter(  25) = +0.507400000e+00, Z_limiter(  25) = +1.473756000e+00
- R_limiter(  26) = +0.478800000e+00, Z_limiter(  26) = +1.445754000e+00
- R_limiter(  27) = +0.333000000e+00, Z_limiter(  27) = +1.303000000e+00
- R_limiter(  28) = +0.333000000e+00, Z_limiter(  28) = +1.100000000e+00
- R_limiter(  29) = +0.334000000e+00, Z_limiter(  29) = +1.100000000e+00
- R_limiter(  30) = +0.261000000e+00, Z_limiter(  30) = +0.502000000e+00
- R_limiter(  31) = +0.261000000e+00, Z_limiter(  31) = +0.348000000e+00
- R_limiter(  32) = +0.261000000e+00, Z_limiter(  32) = +0.146000000e+00
- R_limiter(  33) = +0.261000000e+00, Z_limiter(  33) = +0.000000000e+00
- R_limiter(  34) = +0.261000000e+00, Z_limiter(  34) = -0.146000000e+00
- R_limiter(  35) = +0.261000000e+00, Z_limiter(  35) = -0.348000000e+00
- R_limiter(  36) = +0.261000000e+00, Z_limiter(  36) = -0.502000000e+00
- R_limiter(  37) = +0.334000000e+00, Z_limiter(  37) = -1.100000000e+00
- R_limiter(  38) = +0.333000000e+00, Z_limiter(  38) = -1.100000000e+00
- R_limiter(  39) = +0.333000000e+00, Z_limiter(  39) = -1.303000000e+00
- R_limiter(  40) = +0.478800000e+00, Z_limiter(  40) = -1.445754000e+00
- R_limiter(  41) = +0.507400000e+00, Z_limiter(  41) = -1.473756000e+00
- R_limiter(  42) = +0.535940000e+00, Z_limiter(  42) = -1.501700000e+00
- R_limiter(  43) = +0.539480000e+00, Z_limiter(  43) = -1.509480000e+00
- R_limiter(  44) = +0.907170000e+00, Z_limiter(  44) = -1.877170000e+00
- R_limiter(  45) = +0.905756000e+00, Z_limiter(  45) = -1.878584000e+00
- R_limiter(  46) = +1.090000000e+00, Z_limiter(  46) = -2.060000000e+00
- R_limiter(  47) = +1.090000000e+00, Z_limiter(  47) = -2.060000000e+00
- R_limiter(  48) = +1.350000000e+00, Z_limiter(  48) = -2.060000000e+00
- R_limiter(  49) = +1.730071000e+00, Z_limiter(  49) = -1.680000000e+00
- R_limiter(  50) = +1.555000000e+00, Z_limiter(  50) = -1.567000000e+00
- R_limiter(  51) = +0.940660000e+00, Z_limiter(  51) = -1.593580000e+00
- R_limiter(  52) = +0.919740000e+00, Z_limiter(  52) = -1.593600000e+00
- R_limiter(  53) = +0.890170000e+00, Z_limiter(  53) = -1.589130000e+00
- R_limiter(  54) = +0.854800000e+00, Z_limiter(  54) = -1.569640000e+00
- R_limiter(  55) = +0.827340000e+00, Z_limiter(  55) = -1.531850000e+00
- R_limiter(  56) = +0.819740000e+00, Z_limiter(  56) = -1.493600000e+00
- R_limiter(  57) = +0.819740000e+00, Z_limiter(  57) = -1.481240000e+00
- R_limiter(  58) = +0.822290000e+00, Z_limiter(  58) = -1.445100000e+00
- R_limiter(  59) = +0.839810000e+00, Z_limiter(  59) = -1.382580000e+00
- R_limiter(  60) = +0.869380000e+00, Z_limiter(  60) = -1.331210000e+00
- R_limiter(  61) = +0.892960000e+00, Z_limiter(  61) = -1.303960000e+00
- R_limiter(  62) = +1.190430000e+00, Z_limiter(  62) = -1.007000000e+00
- R_limiter(  63) = +1.321370000e+00, Z_limiter(  63) = -0.820000000e+00
- R_limiter(  64) = +1.555104300e+00, Z_limiter(  64) = -0.822500230e+00
- R_limiter(  65) = +1.555104300e+00, Z_limiter(  65) = -0.405000000e+00
- R_limiter(  66) = +1.555104300e+00, Z_limiter(  66) = +0.405000000e+00
+ n_limiter = 36
+R_limiter(1) = 1.555000e+00,Z_limiter(1) = 4.050000e-01
+R_limiter(2) = 1.555000e+00,Z_limiter(2) = 8.220000e-01
+R_limiter(3) = 1.321000e+00,Z_limiter(3) = 8.200000e-01
+R_limiter(4) = 1.190000e+00,Z_limiter(4) = 1.007000e+00
+R_limiter(5) = 8.920000e-01,Z_limiter(5) = 1.303000e+00
+R_limiter(6) = 8.690000e-01,Z_limiter(6) = 1.331000e+00
+R_limiter(7) = 8.390000e-01,Z_limiter(7) = 1.382000e+00
+R_limiter(8) = 8.220000e-01,Z_limiter(8) = 1.445000e+00
+R_limiter(9) = 8.190000e-01,Z_limiter(9) = 1.481000e+00
+R_limiter(10) = 5.070000e-01,Z_limiter(10) = 1.473000e+00
+R_limiter(11) = 4.780000e-01,Z_limiter(11) = 1.445000e+00
+R_limiter(12) = 3.330000e-01,Z_limiter(12) = 1.303000e+00
+R_limiter(13) = 3.330000e-01,Z_limiter(13) = 1.100000e+00
+R_limiter(14) = 3.340000e-01,Z_limiter(14) = 1.100000e+00
+R_limiter(15) = 2.610000e-01,Z_limiter(15) = 5.020000e-01
+R_limiter(16) = 2.610000e-01,Z_limiter(16) = 3.480000e-01
+R_limiter(17) = 2.610000e-01,Z_limiter(17) = 1.460000e-01
+R_limiter(18) = 2.610000e-01,Z_limiter(18) = 0.000000e+00
+R_limiter(19) = 2.610000e-01,Z_limiter(19) = -1.460000e-01
+R_limiter(20) = 2.610000e-01,Z_limiter(20) = -3.480000e-01
+R_limiter(21) = 2.610000e-01,Z_limiter(21) = -5.020000e-01
+R_limiter(22) = 3.340000e-01,Z_limiter(22) = -1.100000e+00
+R_limiter(23) = 3.330000e-01,Z_limiter(23) = -1.100000e+00
+R_limiter(24) = 3.330000e-01,Z_limiter(24) = -1.303000e+00
+R_limiter(25) = 4.780000e-01,Z_limiter(25) = -1.445000e+00
+R_limiter(26) = 5.070000e-01,Z_limiter(26) = -1.473000e+00
+R_limiter(27) = 8.190000e-01,Z_limiter(27) = -1.481000e+00
+R_limiter(28) = 8.220000e-01,Z_limiter(28) = -1.445000e+00
+R_limiter(29) = 8.390000e-01,Z_limiter(29) = -1.382000e+00
+R_limiter(30) = 8.690000e-01,Z_limiter(30) = -1.331000e+00
+R_limiter(31) = 8.920000e-01,Z_limiter(31) = -1.303000e+00
+R_limiter(32) = 1.190000e+00,Z_limiter(32) = -1.007000e+00
+R_limiter(33) = 1.321000e+00,Z_limiter(33) = -8.200000e-01
+R_limiter(34) = 1.555000e+00,Z_limiter(34) = -8.220000e-01
+R_limiter(35) = 1.555000e+00,Z_limiter(35) = -4.050000e-01
+R_limiter(36) = 1.555000e+00,Z_limiter(36) = 4.050000e-01
 
 
 
