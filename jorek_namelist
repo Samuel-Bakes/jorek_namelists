@@ -32,12 +32,31 @@
  !===============================
 
  freeboundary=.t.
+ freeboundary_equil=.t.
+ resistive_wall=.t.
  fbnd(1)   = 2.
  fbnd(2:4) = 0.
  mf	   = 0
  eqdsk_psi_fact = -1.0
 
  tokamak_device = 'MAST-U'
+
+ pf_coils( 1)%current   =  6.50320e+02
+ pf_coils( 2)%current   =  -2.49400e+03
+ pf_coils( 3)%current   =  -1.69478e+03
+ pf_coils( 4)%current   =  7.53247e+02
+ pf_coils( 5)%current   =  4.78020e+02
+ pf_coils( 6)%current   =  -2.89041e+03
+ pf_coils( 7)%current   =  5.02774e+03
+ pf_coils( 8)%current   =  5.64048e+03
+ pf_coils( 9)%current   =  6.84084e+03
+ pf_coils(10)%current   =  1.07944e+03
+ pf_coils(11)%current   =  1.08264e+03
+ pf_coils(12)%current   =  1.62765e+03
+ pf_coils(13)%current   =  9.15994e-04
+ pf_coils(14)%current   =  0.00000e+00
+ pf_coils(15)%current   =  0.00000e+00
+ pf_coils(16)%current   =  0.00000e+00
  
  n_limiter = 36
 R_limiter(1) = 1.555000e+00,Z_limiter(1) = 4.050000e-01
